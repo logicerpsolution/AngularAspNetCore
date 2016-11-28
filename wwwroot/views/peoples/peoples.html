@@ -1,0 +1,35 @@
+﻿<div class="col-md-12">
+    <div class="row">
+        <h2>List With People</h2>
+        <hr />
+        <div class="col-md-12">
+            <a href="#AddPerson" class="btn btn-default pull-right"><i class="fa fa-plus" aria-hidden="true"></i>Create new person</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr ng-repeat="person in PersonList track by $index">
+                        <td ng-bind="person.firstName"></td>
+                        <td ng-bind="person.lastName"></td>
+                        <td>
+                        <a  class="btn btn-default" ng-href="#EditPerson/{{person.id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <button type="button" class="btn btn-default" ng-click="RemovePerson(person.id)"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
