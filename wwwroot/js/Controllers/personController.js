@@ -1,7 +1,7 @@
 ﻿app.controller("PersonCtrl", function ($scope, PersonFactory) {
 
     $scope.PersonList = [];
-    PersonFactory.getPersion().then(function (response) {
+    PersonFactory.getPerson().then(function (response) {
         $scope.PersonList = response;
     });
 

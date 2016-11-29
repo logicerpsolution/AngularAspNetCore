@@ -14,7 +14,7 @@ app.factory("PersonFactory", function ($q, $http, appconfig) {
             });
             return defer.promise;
         },
-        getPersion: function () {
+        getPerson: function () {
             var deffered = $q.defer();
             $http({ method: "GET", url: appconfig.rootURL + appconfig.apiVersion + "/Person" }).then(function successCallback(response) {
                 deffered.resolve(response.data);
@@ -34,7 +34,7 @@ app.factory("PersonFactory", function ($q, $http, appconfig) {
           });
           return deffered.promise;
       }
-     , getPersionDetail: function (id) {
+     , getPersonDetail: function (id) {
          var deffered = $q.defer();
          $http({
              method: "GET", url: appconfig.rootURL + appconfig.apiVersion + "/Person/" + id,
@@ -46,7 +46,7 @@ app.factory("PersonFactory", function ($q, $http, appconfig) {
          return deffered.promise;
 
      }
-    , updatePersionDetail: function (id, PersonData) {
+    , updatePersonDetail: function (id, PersonData) {
         var deffered = $q.defer();
         $http({
             method: "PUT",

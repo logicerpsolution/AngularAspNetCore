@@ -9,7 +9,7 @@ app.controller("AddNewPersonCtrl", function ($scope, $routeParams, PersonFactory
     } else {
         $scope.actionButton = "Update person";
         $scope.personId = $routeParams.id;
-        PersonFactory.getPersionDetail($routeParams.id).then(function (response) {
+        PersonFactory.getPersonDetail($routeParams.id).then(function (response) {
             $scope.AddNewPersonFrom = response;
         });
     }
@@ -42,7 +42,7 @@ app.controller("AddNewPersonCtrl", function ($scope, $routeParams, PersonFactory
             //    return key;
             //});
 
-            PersonFactory.updatePersionDetail($scope.personId, $scope.AddNewPersonFrom).then(function (response) {
+            PersonFactory.updatePersonDetail($scope.personId, $scope.AddNewPersonFrom).then(function (response) {
                 debugger;
                 //$scope.AddNewPersonFrom = { firstname: "", lastname: "", addresses: [{ city: "", street: "", index: 0 }] };
             });
